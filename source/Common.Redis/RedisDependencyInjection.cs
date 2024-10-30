@@ -13,6 +13,9 @@ public static class RedisDependencyInjection
         bool registerConnectionMultiplexer = false)
     {
         var redisOptions = redisConfiguration.Get<RedisOptions>();
+        if (redisOptions == null)
+            throw new ArgumentNullException("Redis is not configured.");
+        
         services
             .AddSingleton<RedisOptions>(redisOptions)
             .AddSingleton<IRedisContext, RedisContext>();
