@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Common.Cassandra;
 
-public static class CassandraDependencyInjection
+public static class CassandraRegistrations
 {
     public static IServiceCollection AddCassandra<TDbContextImplementation, TDbContext>(
         this IServiceCollection services,
