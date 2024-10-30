@@ -5,7 +5,7 @@ using Minio;
 
 namespace Common.Minio;
 
-public static class MinioDependencyInjection
+public static class MinioRegistrations
 {
     public static IServiceCollection AddMinio(
         this IServiceCollection services,
