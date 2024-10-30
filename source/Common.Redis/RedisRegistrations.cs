@@ -4,7 +4,7 @@ using StackExchange.Redis;
 
 namespace Common.Redis;
 
-public static class RedisDependencyInjection
+public static class RedisRegistrations
 {
     public static IServiceCollection AddRedisServices(
         this IServiceCollection services,

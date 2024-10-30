@@ -6,7 +6,7 @@ namespace Common.AspNet.Swagger;
 
 public static class SwaggerRegistrations
 {
-    public static void AddSwaggerServices(this IServiceCollection services, SwaggerOptions options)
+    public static IServiceCollection AddSwaggerServices(this IServiceCollection services, SwaggerOptions options)
     {
         if (options.UseSwagger)
         {
@@ -50,6 +50,8 @@ public static class SwaggerRegistrations
             });
             services.ConfigureSwaggerGen(config => { config.CustomSchemaIds(type => type.FullName); });
         }
+
+        return services;
     }
 
     public static void UseSwaggerMiddlewares(this IApplicationBuilder app, SwaggerOptions options)
